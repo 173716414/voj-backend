@@ -1,6 +1,8 @@
 package com.victor.voj.codesandbox;
 
 import com.victor.voj.judge.codesandbox.CodeSandbox;
+import com.victor.voj.judge.codesandbox.CodeSandboxFactory;
+import com.victor.voj.judge.codesandbox.CodeSandboxProxy;
 import com.victor.voj.judge.codesandbox.impl.ExampleCodeSandbox;
 import com.victor.voj.judge.codesandbox.impl.RemoteCodeSandbox;
 import com.victor.voj.judge.codesandbox.model.ExecuteCodeRequest;
@@ -39,52 +41,53 @@ class CodeSandboxTest {
         Assertions.assertNotNull(executeCodeResponse);
     }
 
-    // @Test
-    // void executeCodeByValue() {
-    //     CodeSandbox codeSandbox = CodeSandboxFactory.newInstance(type);
-    //     String code = "int main() { }";
-    //     String language = QuestionSubmitLanguageEnum.JAVA.getValue();
-    //     List<String> inputList = Arrays.asList("1 2", "3 4");
-    //     ExecuteCodeRequest executeCodeRequest = ExecuteCodeRequest.builder()
-    //             .code(code)
-    //             .language(language)
-    //             .inputList(inputList)
-    //             .build();
-    //     ExecuteCodeResponse executeCodeResponse = codeSandbox.executeCode(executeCodeRequest);
-    //     Assertions.assertNotNull(executeCodeResponse);
-    // }
-    //
-    // @Test
-    // void executeCodeByProxy() {
-    //     CodeSandbox codeSandbox = CodeSandboxFactory.newInstance(type);
-    //     codeSandbox = new CodeSandboxProxy(codeSandbox);
-    //     String code = "int main() { }";
-    //     String language = QuestionSubmitLanguageEnum.JAVA.getValue();
-    //     List<String> inputList = Arrays.asList("1 2", "3 4");
-    //     ExecuteCodeRequest executeCodeRequest = ExecuteCodeRequest.builder()
-    //             .code(code)
-    //             .language(language)
-    //             .inputList(inputList)
-    //             .build();
-    //     ExecuteCodeResponse executeCodeResponse = codeSandbox.executeCode(executeCodeRequest);
-    //     Assertions.assertNotNull(executeCodeResponse);
-    // }
-    //
-    //
-    // public static void main(String[] args) {
-    //     Scanner scanner = new Scanner(System.in);
-    //     while (scanner.hasNext()) {
-    //         String type = scanner.next();
-    //         CodeSandbox codeSandbox = CodeSandboxFactory.newInstance(type);
-    //         String code = "int main() { }";
-    //         String language = QuestionSubmitLanguageEnum.JAVA.getValue();
-    //         List<String> inputList = Arrays.asList("1 2", "3 4");
-    //         ExecuteCodeRequest executeCodeRequest = ExecuteCodeRequest.builder()
-    //                 .code(code)
-    //                 .language(language)
-    //                 .inputList(inputList)
-    //                 .build();
-    //         ExecuteCodeResponse executeCodeResponse = codeSandbox.executeCode(executeCodeRequest);
-    //     }
-    // }
+    @Test
+    void executeCodeByValue() {
+        CodeSandbox codeSandbox = CodeSandboxFactory.newInstance(type);
+        String code = "int main() { }";
+        String language = QuestionSubmitLanguageEnum.JAVA.getValue();
+        List<String> inputList = Arrays.asList("1 2", "3 4");
+        ExecuteCodeRequest executeCodeRequest = ExecuteCodeRequest.builder()
+                .code(code)
+                .language(language)
+                .inputList(inputList)
+                .build();
+        ExecuteCodeResponse executeCodeResponse = codeSandbox.executeCode(executeCodeRequest);
+        Assertions.assertNotNull(executeCodeResponse);
+    }
+
+    @Test
+    void executeCodeByProxy() {
+        CodeSandbox codeSandbox = CodeSandboxFactory.newInstance(type);
+        codeSandbox = new CodeSandboxProxy(codeSandbox);
+        String code = "int main() { }";
+        String language = QuestionSubmitLanguageEnum.JAVA.getValue();
+        List<String> inputList = Arrays.asList("1 2", "3 4");
+        ExecuteCodeRequest executeCodeRequest = ExecuteCodeRequest.builder()
+                .code(code)
+                .language(language)
+                .inputList(inputList)
+                .build();
+        ExecuteCodeResponse executeCodeResponse = codeSandbox.executeCode(executeCodeRequest);
+        Assertions.assertNotNull(executeCodeResponse);
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String type = scanner.next();
+            // System.out.println("hello");
+            CodeSandbox codeSandbox = CodeSandboxFactory.newInstance(type);
+            String code = "int main() { }";
+            String language = QuestionSubmitLanguageEnum.JAVA.getValue();
+            List<String> inputList = Arrays.asList("1 2", "3 4");
+            ExecuteCodeRequest executeCodeRequest = ExecuteCodeRequest.builder()
+                    .code(code)
+                    .language(language)
+                    .inputList(inputList)
+                    .build();
+            ExecuteCodeResponse executeCodeResponse = codeSandbox.executeCode(executeCodeRequest);
+        }
+    }
 }
