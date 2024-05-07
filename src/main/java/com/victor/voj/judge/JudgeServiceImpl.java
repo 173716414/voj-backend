@@ -10,7 +10,7 @@ import com.victor.voj.judge.codesandbox.model.ExecuteCodeRequest;
 import com.victor.voj.judge.codesandbox.model.ExecuteCodeResponse;
 import com.victor.voj.judge.strategy.JudgeContext;
 import com.victor.voj.model.dto.question.JudgeCase;
-import com.victor.voj.model.dto.questionsubmit.JudgeInfo;
+import com.victor.voj.judge.codesandbox.model.JudgeInfo;
 import com.victor.voj.model.entity.Question;
 import com.victor.voj.model.entity.QuestionSubmit;
 import com.victor.voj.model.enums.QuestionSubmitStatusEnum;

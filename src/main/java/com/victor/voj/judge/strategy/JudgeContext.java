@@ -1,7 +1,7 @@
 package com.victor.voj.judge.strategy;
 
 import com.victor.voj.model.dto.question.JudgeCase;
-import com.victor.voj.model.dto.questionsubmit.JudgeInfo;
+import com.victor.voj.judge.codesandbox.model.JudgeInfo;
 import com.victor.voj.model.entity.Question;
 import com.victor.voj.model.entity.QuestionSubmit;
 import lombok.Data;
